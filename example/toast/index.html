@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="my-app" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../bower_components/onsenui/build/css/onsenui.css"/>
+    <link rel="stylesheet" href="../../bower_components/onsenui/build/css/onsen-css-components.css"/>
+    <script src="../../bower_components/onsenui/build/js/angular/angular.js"></script>
+    <script src="../../bower_components/onsenui/build/js/onsenui.js"></script>
+    <script src="../../src/toast/toast.js"></script>
+    <script>
+        var module = ons.bootstrap('my-app', ['onsen']);
+        module.controller('AppController', function ($scope) {
+        });
+        module.controller('PageController', function ($scope,$window) {
+            ons.ready(function () {
+            });
+            $scope.showToast = function(){
+                hito.toast.show({
+                    title:"Complete!",
+                    message:"Please add next",
+                    time:1000
+                });
+            }
+        });
+    </script>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body ng-controller="AppController">
+<ons-navigator var="navigator">
+    <ons-page ng-controller="PageController">
+        <ons-toolbar>
+            <div class="center">Toast</div>
+        </ons-toolbar>
+
+        <ons-list>
+            <li class="list__header">title,message,time</li>
+            <ons-list-item>
+               <ons-button ng-click="showToast()">Show Toast</ons-button>
+            </ons-list-item>
+        </ons-list>
+
+    </ons-page>
+</ons-navigator>
+</body>
+</html>

@@ -33,6 +33,7 @@
         </ons-toolbar>
 
         <ons-list>
+            <li class="list__header">hito-select(English)</li>
             <ons-list-item>
                 <div>
                     Favorite Fruits
@@ -45,17 +46,41 @@
                     </select>
                 </div>
             </ons-list-item>
+            <li class="list__header">hito-select(Japanse)</li>
             <ons-list-item>
                 <div>
                     好きな果物
                 </div>
-                <div class="hito-select">
+                <div class="hito-select" style="width: 50%;">
                     <select>
                         <option>りんご</option>
                         <option selected>オレンジ</option>
                         <option>バナナ</option>
                     </select>
                 </div>
+            </ons-list-item>
+            <li class="list__header">hito-select + hito-select-opt</li>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col>
+                        <div class="hito-select hito-select-opt">
+                            <select>
+                                <option>りんご</option>
+                                <option selected>オレンジ</option>
+                                <option>バナナ</option>
+                            </select>
+                        </div>
+                    </ons-col>
+                    <ons-col>
+                        <div class="hito-select hito-select-opt">
+                            <select>
+                                <option>りんご</option>
+                                <option selected>オレンジ</option>
+                                <option>バナナ</option>
+                            </select>
+                        </div>
+                    </ons-col>
+                </ons-row>
             </ons-list-item>
         </ons-list>
 

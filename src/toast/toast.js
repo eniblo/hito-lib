@@ -60,9 +60,9 @@ window.hito.toast = (function() {
 
         alertDialog.show({
             callback: function() {
-                if(promptDialog && autofocus) {
-                    inputEl[0].focus();
-                }
+                //added remove mask div
+                angular.element(document.querySelector(".alert-dialog-mask")).remove();
+                //removed input focus
             }
         });
 

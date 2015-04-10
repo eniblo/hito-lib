@@ -13,7 +13,8 @@
     "bower_components",
     "test",
     "tests",
-    "example"
+    "example",
+    "src"
   ],
   "dependencies": {
     "onsenui": "~1.2.2"

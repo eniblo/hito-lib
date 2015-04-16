@@ -36,6 +36,9 @@ hito.loading.hide();
 
 Show popover menu easily. Same $scope.
 
+Security issue: only trusted func
+
+
 ```
 $scope.showMenu = function(target){
                 hito.popoverMenu.show(

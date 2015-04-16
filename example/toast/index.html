@@ -7,6 +7,7 @@
     <script src="../../bower_components/onsenui/build/js/angular/angular.js"></script>
     <script src="../../bower_components/onsenui/build/js/onsenui.js"></script>
     <script src="../../src/toast/toast.js"></script>
+    <link rel="stylesheet" href="../../src/toast/toast.css"/>
     <script>
         var module = ons.bootstrap('my-app', ['onsen']);
         module.controller('AppController', function ($scope) {
@@ -18,7 +19,15 @@
                 hito.toast.show({
                     title:"Complete!",
                     message:"Please add next",
-                    time:1000
+                    time:2000
+                });
+            }
+            $scope.showDarkToast = function(){
+                hito.toast.show({
+                    title:"Complete!",
+                    message:"Please add next",
+                    modifier:"dark",
+                    time:2000
                 });
             }
         });
@@ -29,6 +38,9 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
         }
+    </style>
+    <style>
+
     </style>
 </head>
 <body ng-controller="AppController">
@@ -43,7 +55,12 @@
             <ons-list-item>
                <ons-button ng-click="showToast()">Show Toast</ons-button>
             </ons-list-item>
+            <ons-list-item>
+                <ons-button ng-click="showDarkToast()">Show Toast(modifier:"dark")</ons-button>
+            </ons-list-item>
+
         </ons-list>
+
 
     </ons-page>
 </ons-navigator>

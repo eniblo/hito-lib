@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         cssmin : {
             furo : {
-                src : ['src/select/hito_select.css'],
+                src : ['src/select/hito_select.css','src/toast/toast.css'],
                 dest : 'dist/hito-lib.min.css'
             }
         },

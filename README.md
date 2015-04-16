@@ -31,3 +31,28 @@ hito.loading.show({
 
 hito.loading.hide();
 ```
+
+###PopoverMenu###
+
+Show popover menu easily. Same $scope.
+
+```
+$scope.showMenu = function(target){
+                hito.popoverMenu.show(
+                    appNavigator.getCurrentPage(),
+                    target,
+                    [
+                        {
+                            icon:"fa-home",
+                            title:"About us",
+                            func:"showAlert()"
+                        },
+                        {
+                            icon:"fa-user",
+                            title:"Setting",
+                            func:"showAlert()"
+                        }
+                    ]
+                );
+            }
+```

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" ng-app="my-app" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../bower_components/onsenui/build/css/onsenui.css"/>
+    <link rel="stylesheet" href="../../bower_components/onsenui/build/css/onsen-css-components.css"/>
+    <script src="../../bower_components/onsenui/build/js/angular/angular.js"></script>
+    <script src="../../bower_components/onsenui/build/js/onsenui.js"></script>
+    <script src="../../src/popover_menu/popover_menu.js"></script>
+    <!--<link rel="stylesheet" href="../../src/toast/toast.css"/>-->
+    <script>
+        var module = ons.bootstrap('my-app', ['onsen']);
+        module.controller('AppController', function ($scope) {
+        });
+        module.controller('PageController', function ($scope,$window) {
+            ons.ready(function () {
+            });
+            $scope.showMenu = function(target){
+                hito.popoverMenu.show(
+                    appNavigator.getCurrentPage(),
+                    target,
+                    [
+                        {
+                            icon:"fa-home",
+                            title:"About us",
+                            func:"showAlert()"
+                        },
+                        {
+                            icon:"fa-user",
+                            title:"Setting",
+                            func:"showAlert()"
+                        },
+                        {
+                            icon:"fa-globe",
+                            title:"World",
+                            func:"showAlert()"
+                        }
+                    ]
+                );
+            }
+
+            $scope.showAlert=function(){
+                alert("good menu");
+            }
+        });
+    </script>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+
+    </style>
+</head>
+<body ng-controller="AppController">
+<ons-navigator var="appNavigator">
+    <ons-page ng-controller="PageController">
+        <ons-toolbar>
+            <div class="center">PopoverMenu</div>
+            <div class="right">
+                <ons-toolbar-button id="menu-btn" ng-click="showMenu('#menu-btn')">
+                    <ons-icon icon="fa-bars"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+
+        <pre>
+            hito.popoverMenu.show(
+                    appNavigator.getCurrentPage(),
+                    target,
+                    [
+                        {
+                            icon:"fa-home",
+                            title:"About us",
+                            func:"showAlert()"
+                        },
+                        {
+                            icon:"fa-user",
+                            title:"Setting",
+                            func:"showAlert()"
+                        },
+                        {
+                            icon:"fa-globe",
+                            title:"World",
+                            func:"showAlert()"
+                        }
+                    ]
+                );
+        </pre>
+
+    </ons-page>
+</ons-navigator>
+</body>
+</html>

@@ -10,7 +10,7 @@ module.exports = function(grunt) {
             furo : {
                 options : {
                 },
-                src : ['src/toast/toast.js', 'src/loading/loading.js'],
+                src : ['src/toast/toast.js', 'src/loading/loading.js','src/popover_menu/popover_menu.js'],
                 dest : 'dist/hito-lib.min.js'
             }
         }
